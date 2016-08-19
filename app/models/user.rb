@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     (player.radiant? && match.winner == 'Radiant') ||(!player.radiant? && match.winner == 'Dire')
   end
 
+  def played_for_in(match)
+    Rails.cache.fetch(self.uid + '_played_for_in_' + match.uid) {find_self_in(match).hero}
+  end
+
   private
 
   def find_self_in(match)

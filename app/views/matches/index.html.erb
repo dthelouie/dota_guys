@@ -5,6 +5,7 @@
     <% matches.each do |match| %>
     <tr>
       <td>
+        <%= render 'player_hero', hero: current_user.played_for_in(match)%>
         <%= link_to match.started_at, match_path(match) %>
         <% if current_user.won?(match)%>
           <span class="label label-success">won</span>
