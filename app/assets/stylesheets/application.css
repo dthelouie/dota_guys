@@ -20,3 +20,20 @@ nav{
     max-width: 48px;
   }
 }
+
+$radiant: #92A524;
+$dire: #C23C2A;
+
+.dire {
+  color: $dire;
+}
+
+.radiant {
+  color: $radiant;
+}
+
+.info-table {
+  img {
+    width: 30px;
+  }
+}
