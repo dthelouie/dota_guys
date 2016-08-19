@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
                                             duration: parse_duration(match_info.duration),
                                             match_type: match_info.type
                                           })
+                                          new_match.load_players!(match_info.radiant, match_info.dire)
         end
       end
     end

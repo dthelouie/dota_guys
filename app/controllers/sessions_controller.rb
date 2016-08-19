@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     rescue
       flash[:error] = "NOT GONNA BE ABLE TO DO IT"
     else
-      @user.load_matches!(1)
+      @user.load_matches!(10)
       session[:user_id] = @user.id
       flash[:success] = "HEY #{@user.nickname}!"
     end
