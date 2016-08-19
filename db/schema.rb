@@ -11,10 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819040617) do
+ActiveRecord::Schema.define(version: 20160819052019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "matches", force: :cascade do |t|
+    t.string   "uid"
+    t.string   "winner"
+    t.integer  "first_blood"
+    t.datetime "started_at"
+    t.string   "mode"
+    t.string   "match_type"
+    t.string   "duration"
+    t.integer  "cluster"
+    t.integer  "user_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.integer "match_id"
+    t.string  "uid"
+    t.text    "hero"
+    t.integer "level"
+    t.integer "kills"
+    t.integer "deaths"
+    t.integer "assists"
+    t.integer "last_hits"
+    t.integer "denies"
+    t.integer "gold"
+    t.integer "gpm"
+    t.integer "xpm"
+    t.string  "status"
+    t.integer "gold_spent"
+    t.integer "hero_damage"
+    t.integer "tower_damage"
+    t.integer "hero_healing"
+    t.text    "items"
+    t.integer "slot"
+    t.boolean "radiant"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "uid",         null: false

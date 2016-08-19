@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'matches#index'
+
   match '/auth/:provider/callback', to: 'sessions#create', via: :all
   delete '/logout', to: 'sessions#destroy', as: :logout
 
