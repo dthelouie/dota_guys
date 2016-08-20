@@ -3,7 +3,7 @@ class CreateMatches < ActiveRecord::Migration
     create_table :matches do |t|
       t.string :uid, unique: true
       t.string :winner
-      t.integer :first_blood
+      t.string :first_blood
       t.datetime :started_at
       t.string :mode
       t.string :match_type

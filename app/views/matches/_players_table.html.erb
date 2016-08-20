@@ -20,10 +20,13 @@
   <% players.each do |player| %>
     <tr>
       <td>
+        <% if player.avatar%>
+          <img src="<%= player.avatar %>" alt="<%= player.nickname %> />
+        <% end %>
         <% if player.abandoned_or_not_connected? %>
-          <abbr class="text-muted" title="<%= player.status.titleize %>"><%= player.uid %></abbr>
+          <abbr class="text-muted" title="<%= player.status.titleize %>"><%= player.nickname %></abbr>
         <% else %>
-          <%= player.uid %>
+          <%= player.nickname %>
         <% end %>
       </td>
       <td><%= render 'player_hero', hero: player.hero %></td>

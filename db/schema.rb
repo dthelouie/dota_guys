@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160819052019) do
   create_table "matches", force: :cascade do |t|
     t.string   "uid"
     t.string   "winner"
-    t.integer  "first_blood"
+    t.string   "first_blood"
     t.datetime "started_at"
     t.string   "mode"
     t.string   "match_type"
