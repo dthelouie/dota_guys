@@ -1,14 +1,14 @@
-
+<%= image_tag @player.avatar_url, alt: @player.nickname, title: @player.nickname%>
 
 <% if @matches && @matches.any? %>
-<h2>Your Recent Matches:</h2>
+<h2><%= @player.nickname %>'s Recent Matches:</h2>
   <table class="table table-striped table-hover">
     <% @matches.each do |match| %>
     <tr>
       <td>
-        <%= render 'player_hero', hero: current_user.played_for_in(match) %>
+        <%= render 'player_hero', hero: @player.played_for_in(match) %>
         <%= link_to match.started_at.localtime, match_path(match) %>
-        <% if current_user.won?(match)%>
+        <% if @player.won?(match)%>
           <span class="label label-success">won</span>
         <% else %>
           <span class="label label-danger">lost</span>
