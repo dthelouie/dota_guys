@@ -1,6 +1,7 @@
 class MatchesController < ApplicationController
 
   def index
+    current_user.load_matches!(10)
     @matches = current_user.matches.order('started_at DESC') if current_user
   end
 
