@@ -21,7 +21,7 @@
     <tr>
       <td>
         <% if player.avatar%>
-          <img src="<%= player.avatar %>" alt="<%= player.nickname %> />
+          <%= image_tag player.avatar, alt: player.nickname %> <BR />
         <% end %>
         <% if player.abandoned_or_not_connected? %>
           <abbr class="text-muted" title="<%= player.status.titleize %>">
