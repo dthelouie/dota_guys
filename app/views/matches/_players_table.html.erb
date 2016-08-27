@@ -1,4 +1,4 @@
-<table class="table table-hover table-striped info-table">
+<table class="table striped bordered info-table">
   <tr>
     <th>Player ID</th>
     <th>Hero</th>
@@ -38,11 +38,11 @@
           <% end %>
         <% end %>
       </td>
-      <td><%= image_tag player.hero[:image], alt: player.hero[:name], title: player.hero[:name]%></td>
+      <td><%= image_tag player.hero[:image], alt: player.hero[:name], title: player.hero[:name], class: "hero_img"%></td>
       <td><%= player.level %></td>
       <td>
         <% player.items.each do |item| %>
-          <%= image_tag item[:image], alt: item[:name], title: item[:name] %>
+          <%= image_tag item[:image], alt: item[:name], title: item[:name], class: "item_img"%>
         <% end %>
       </td>
       <td><%= player.kills %></td>

@@ -36,4 +36,9 @@ class Match < ActiveRecord::Base
       end
     end
   end
+
+  def local
+    self.started_at.localtime.strftime("%-m/%d/%Y %l:%M %p")
+  end
+
 end
