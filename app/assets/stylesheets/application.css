@@ -21,19 +21,34 @@ nav{
   }
 }
 
-$radiant: #92A524;
-$dire: #C23C2A;
 
 .dire {
-  color: $dire;
+  color: #CC3323;
 }
 
 .radiant {
-  color: $radiant;
+  color: #92A524;
 }
 
 .info-table {
   img {
     width: 30px;
   }
+}
+
+.hero_img {
+  max-height: 48px;
+}
+
+.item_img{
+  max-height: 20px;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.navbar {
+  position: relative;
+  margin-top: -30px;
 }
