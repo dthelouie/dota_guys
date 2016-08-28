@@ -23,7 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'omniauth-steam'
+gem 'omniauth-steam', github: 'reu/omniauth-steam', branch: 'master'
 gem 'steam_web_api'
 gem 'dota', github: 'vinnicc/dota', branch: 'master'
 
