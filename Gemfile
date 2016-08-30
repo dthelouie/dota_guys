@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-steam'
 gem 'steam_web_api'
+gem 'omniauth-openid'
 gem 'dota', github: 'vinnicc/dota', branch: 'master'
 
 # Use Unicorn as the app server
