@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
 
   def show
     redirect_to root_path if current_user && params[:player_id].to_s == current_user.uid
-    if params[:player_id].to_s.length != 17
+    if params[:player_id].to_s.length != 17 
       id = params[:player_id].to_i + 76561197960265728
     else
       id = params[:player_id].to_i
