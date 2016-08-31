@@ -7,7 +7,7 @@
     <tr class="row">
       <td>
         <%= render 'player_hero', hero: current_user.played_for_in(match) %>
-        <%= link_to match.local, match_path(match) %>
+        <%= link_to match.formatted, match_path(match), class: "match-link" %>
         <% if current_user.won?(match)%>
           <span class="label radiant">won</span>
         <% else %>

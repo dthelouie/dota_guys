@@ -9,7 +9,7 @@
     <tr>
       <td>
         <%= render 'player_hero', hero: @player.played_for_in(match) %>
-        <%= link_to match.started_at.localtime, match_path(match) %>
+        <%= link_to match.formatted, match_path(match) %>
         <% if @player.won?(match)%>
           <span class="label label-success">won</span>
         <% else %>
