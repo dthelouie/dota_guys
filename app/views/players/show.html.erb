@@ -11,9 +11,9 @@
         <%= render 'player_hero', hero: @player.played_for_in(match) %>
         <%= link_to match.formatted, match_path(match), class:"match-link" %>
         <% if @player.won?(match)%>
-          <span class="label label-success">won</span>
+          <span class="label radiant">won</span>
         <% else %>
-          <span class="label label-danger">lost</span>
+          <span class="label dire">lost</span>
         <% end %>
       </td>
     </tr>
