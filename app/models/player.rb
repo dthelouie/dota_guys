@@ -8,12 +8,11 @@ class Player < ActiveRecord::Base
 
   def kda
     if self.deaths == 0
-      ratio = self.kills + self.assists
+      ratio = self.kills.to_f + self.assists.to_f
     else
       ratio = (self.kills.to_f + self.assists.to_f) / deaths.to_f
-      ratio = ratio.round(1)
     end
-    return ratio
+    return ratio.round(1)
   end
 
 
