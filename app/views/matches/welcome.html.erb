@@ -4,7 +4,7 @@
 <p>Alternatively, search for players by 32-bit or 64-bit Steam ID</p>
 
 <div>
-  <div class="card grey lighten-3">
+  <div class="card grey lighten-3 z-depth-2">
     <div class="card-content">
         <%= form_tag player_path(id: 0), method: 'get' do %>
           <%= text_field_tag :player_id, params[:player_id], placeholder: "Enter Steam ID here"%>
