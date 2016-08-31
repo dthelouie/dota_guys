@@ -11,7 +11,7 @@ class Player < ActiveRecord::Base
       ratio = self.kills + self.assists
     else
       ratio = (self.kills.to_f + self.assists.to_f) / deaths.to_f
-      ratio.round(1)
+      ratio = ratio.round(1)
     end
     return ratio
   end
