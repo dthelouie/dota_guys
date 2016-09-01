@@ -7,9 +7,9 @@
   <div class="card grey lighten-3 z-depth-2">
     <div class="card-content">
         <%= form_tag player_path(id: 0), method: 'get' do %>
-          <div>
-            <%= label_tag :player_id, "Enter Steam ID here" %>
+          <div class="input-field">
             <%= text_field_tag :player_id, params[:player_id], class: "validate" %>
+            <%= label_tag :player_id, "Enter Steam ID here" %>
           </div>
           <%= submit_tag "Search"%>
         <% end %>
