@@ -1,5 +1,5 @@
 #README
-
+Found at dotaguys.herokuapp.com
 Welcome to DotaGuys.  This app will allow you to log into your Steam account and view some of your recent games of Dota, the popular Multiplayer Online Battle Arena game by Valve Corporation.
 
 ### When logged in via Steam, you will be able to:
