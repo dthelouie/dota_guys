@@ -15,14 +15,14 @@ class User < ActiveRecord::Base
     def steam_id_conversion
       return 76561197960265728
     end
-    
+
   end
 
   def load_matches!(count)
     matches_arr = Dota.api.matches(player_id: self.uid, limit: count)
     if matches_arr && matches_arr.any?
       matches_arr.each do |match|
-        unless self.matches.where(uid: match.id).any?
+        unless Match.where(uid: match.id).any?
           match_info = Dota.api.matches(match.id)
           new_match = self.matches.create({
                                             uid: match.id,
