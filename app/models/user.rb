@@ -4,13 +4,18 @@ class User < ActiveRecord::Base
   class << self
     def from_omniauth(auth)
       info = auth['info']
-      user = self.find_or_initialize_by(uid: (auth['uid'].to_i - 76561197960265728).to_s)
+      user = self.find_or_initialize_by(uid: (auth['uid'].to_i - steam_id_conversion).to_s)
       user.nickname = info['nickname']
       user.avatar_url = info['image']
       user.profile_url = info['urls']['Profile']
       user.save!
       user
     end
+
+    def steam_id_conversion
+      return 76561197960265728
+    end
+    
   end
 
   def load_matches!(count)
