@@ -10,7 +10,11 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
+  def steam_id_conversion
+    return 76561197960265728
+  end
 
-  helper_method :current_user, :page_header
+
+  helper_method :current_user, :steam_id_conversion
 
 end
