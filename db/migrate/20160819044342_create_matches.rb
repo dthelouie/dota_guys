@@ -1,7 +1,7 @@
 class CreateMatches < ActiveRecord::Migration
   def change
     create_table :matches do |t|
-      t.string :uid, unique: true
+      t.string :uid
       t.string :winner
       t.string :first_blood
       t.datetime :started_at
