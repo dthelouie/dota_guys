@@ -17,7 +17,7 @@ class Player < ActiveRecord::Base
 
 
   def get_profile
-    player = SteamWebApi::Player.new(self.uid.to_i + 76561197960265728)
+    player = SteamWebApi::Player.new(self.uid.to_i + steam_id_conversion)
     if player.summary.success
       @profile = player.summary.profile
     else
@@ -48,6 +48,11 @@ class Player < ActiveRecord::Base
 
   def abandoned_or_not_connected?
     status != 'played'
+  end
+
+  private
+  def steam_id_conversion
+    return 76561197960265728
   end
 
 end
