@@ -12,7 +12,7 @@ class PlayersController < ApplicationController
       render :player_not_found
     else
       player_profile = player_data.summary.profile
-      @player = User.find_by(uid: player_profile['steamid'].to_i - steam_id_conversion)
+      @player = User.find_by(uid: (player_profile['steamid'].to_i - steam_id_conversion).to_s)
       if !@player
         @player = User.create(uid: (player_profile['steamid'].to_i - steam_id_conversion).to_s, nickname: player_profile['personaname'], avatar_url: player_profile['avatarmedium'], profile_url: player_profile['profileurl'])
       elsif (@player.nickname != player_profile['personaname'] || @player.avatar_url != player_profile['avatarmedium'])
