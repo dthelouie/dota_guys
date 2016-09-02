@@ -38,7 +38,7 @@ class Match < ActiveRecord::Base
   end
 
   def formatted
-    self.started_at.strftime("%-m/%d/%Y, %l:%M %p %z")
+    self.started_at.strftime("%-m/%d/%Y, %l:%M:%S %p %z")
   end
 
 end
