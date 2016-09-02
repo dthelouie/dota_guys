@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     matches_arr = Dota.api.matches(player_id: self.uid, limit: count)
     if matches_arr && matches_arr.any?
       matches_arr.each do |match|
-        unless Match.where(uid: match.id).any?
+        unless self.matches.where(uid: match.id).any?
           match_info = Dota.api.matches(match.id)
           new_match = self.matches.create({
                                             uid: match.id,
