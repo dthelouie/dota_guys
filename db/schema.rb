@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902071228) do
+ActiveRecord::Schema.define(version: 20160819052019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,6 @@ ActiveRecord::Schema.define(version: 20160902071228) do
     t.integer  "cluster"
     t.integer  "user_id"
   end
-
-  add_index "matches", ["uid"], name: "index_matches_on_uid", using: :btree
 
   create_table "players", force: :cascade do |t|
     t.integer "match_id"
@@ -59,7 +57,5 @@ ActiveRecord::Schema.define(version: 20160902071228) do
     t.string "avatar_url",  null: false
     t.string "profile_url", null: false
   end
-
-  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
 end
