@@ -58,4 +58,6 @@ ActiveRecord::Schema.define(version: 20160819052019) do
     t.string "profile_url", null: false
   end
 
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
+
 end
