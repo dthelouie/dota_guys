@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/vinnicc/dota.git
-  revision: 72027783774c2d54de35ddcea2902c429e107ac0
+  revision: b512272c8c83e154ef150464c847a9f4045d5116
   branch: master
   specs:
     dota (0.0.20)
@@ -156,7 +156,7 @@ GEM
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.1.1)
+    sprockets-rails (3.2.0)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
