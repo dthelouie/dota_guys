@@ -20,23 +20,16 @@
   <% players.each do |player| %>
     <tr>
       <td>
-        <% if player.avatar%>
-          <%= image_tag player.avatar, alt: player.nickname %> <BR />
-        <% end %>
-        <% if player.abandoned_or_not_connected? %>
-          <abbr class="text-muted" title="<%= player.status.titleize %>">
-            <% if player.nickname == "some random DotaGuy"%>
-              <%= player.nickname %>
-            <% else %>
-              <%= link_to player.nickname, player_path(player_id: player.uid) %></abbr>
-            <% end %>
-        <% else %>
           <% if player.nickname == "some random DotaGuy"%>
-            <%= player.nickname %>
+            <abbr title="<%= player.status.titleize %>">
+              <%= player.nickname %>
+            </abbr>
           <% else %>
-            <%= link_to player.nickname, player_path(player_id: player.uid) %></abbr>
+            <%= image_tag player.avatar, alt: player.nickname %> <BR />
+            <abbr title="<%= player.status.titleize %>">
+              <%= link_to player.nickname, player_path(player_id: player.uid) %>
+            </abbr>
           <% end %>
-        <% end %>
       </td>
       <td><%= image_tag player.hero[:image], alt: player.hero[:name], title: player.hero[:name], class: "hero_img"%> </td>
       <td><%= player.level %></td>
