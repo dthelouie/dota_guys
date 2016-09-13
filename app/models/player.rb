@@ -47,7 +47,7 @@ class Player < ActiveRecord::Base
 
 
   def abandoned_or_not_connected?
-    status != 'played'
+    status != 'Played'
   end
 
   private
